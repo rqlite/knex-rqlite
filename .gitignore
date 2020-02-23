@@ -4,6 +4,7 @@
 !/coverage/.gitkeep
 /dist/*
 !/dist/.gitkeep
+!/dist/back
 /node_modules
 /tmp/*
 !/tmp/.gitkeep
