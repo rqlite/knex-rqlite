@@ -14,6 +14,9 @@
   "scripts": {
     "postinstall": "patch-package"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-external-helpers": "^7.8.3",
