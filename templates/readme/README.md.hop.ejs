@@ -1,0 +1,45 @@
+<% if (input.pkg.homepage) { %>
+# [<%= input.pkg.name %>](<%= input.pkg.homepage %>)
+<% } else { %>
+# <%= input.pkg.name %>
+<% } %>
+
+<%- include('/tpl-lib/badges') %>
+
+<%= input.pkg.description %>
+
+-------
+
+## Usage
+
+First install knex and knex-rqlite: `npm install knex rqlite-js <%= input.pkg.name %>`
+
+Then to use the driver like this:
+
+```js
+import Knex from "knex";
+import { RqliteDialect } from "./rqliteDialect";
+
+const knex = Knex({
+  client: RqliteDialect,
+  connection: {
+    host: "localhost",
+    port: 4001
+  }
+});
+``` 
+
+## Known problems
+
+- This knex dialect **doesn't support transactions** yet
+- Look into TODO.md to find a list of coming features
+
+## E2E tests
+
+The tests can be run with `./scripts/test.js`
+
+**This requires a running rqlite server on port 4001 and will drop&change the table rqliteDialect-e2e**
+
+## Building
+
+`./scripts/build`

@@ -1,0 +1,27 @@
+<h1 id="lufraiknex-rqlite"><a href="#lufraiknex-rqlite" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a><a href="https://github.com/lufrai/knex-rqlite" target="_blank">@lufrai/knex-rqlite</a></h1>
+<p><a href="https://opensource.org/licenses/MIT"><img src="https://raw.github.com/lufrai/knex-rqlite//static/readme/gen-badges/badge.0.svg?sanitize=true" alt="license"></a> <a href="https://www.npmjs.com/package/@lufrai/knex-rqlite"><img src="https://raw.github.com/lufrai/knex-rqlite//static/readme/gen-badges/badge.1.svg?sanitize=true" alt="npm"></a> <img src="https://raw.github.com/lufrai/knex-rqlite//static/readme/gen-badges/badge.2.svg?sanitize=true" alt="Tests"> <img src="https://raw.github.com/lufrai/knex-rqlite//static/readme/gen-badges/badge.3.svg?sanitize=true" alt="coverage"> <a href="https://prettier.io/"><img src="https://raw.github.com/lufrai/knex-rqlite//static/readme/gen-badges/badge.4.svg?sanitize=true" alt="code style"></a> <img src="https://raw.github.com/lufrai/knex-rqlite//static/readme/gen-badges/badge.5.svg?sanitize=true" alt="PRs"> </p>
+<p>Rqlite dialect for knex</p>
+<hr>
+<h2 id="usage"><a href="#usage" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Usage</h2>
+<p>First install knex and knex-rqlite: <code>npm install knex rqlite-js @lufrai/knex-rqlite</code></p>
+<p>Then to use the driver like this:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">import</span> Knex <span class="hljs-keyword">from</span> <span class="hljs-string">"knex"</span>;
+<span class="hljs-keyword">import</span> { RqliteDialect } <span class="hljs-keyword">from</span> <span class="hljs-string">"./rqliteDialect"</span>;
+
+<span class="hljs-keyword">const</span> knex = Knex({
+  <span class="hljs-attr">client</span>: RqliteDialect,
+  <span class="hljs-attr">connection</span>: {
+    <span class="hljs-attr">host</span>: <span class="hljs-string">"localhost"</span>,
+    <span class="hljs-attr">port</span>: <span class="hljs-number">4001</span>
+  }
+});</code></pre>
+<h2 id="known-problems"><a href="#known-problems" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Known problems</h2>
+<ul>
+<li>This knex dialect <strong>doesn't support transactions</strong> yet</li>
+<li>Look into TODO.md to find a list of coming features</li>
+</ul>
+<h2 id="e2e-tests"><a href="#e2e-tests" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>E2E tests</h2>
+<p>The tests can be run with <code>./scripts/test.js</code></p>
+<p><strong>This requires a running rqlite server on port 4001 and will drop&#x26;change the table rqliteDialect-e2e</strong></p>
+<h2 id="building"><a href="#building" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Building</h2>
+<p><code>./scripts/build</code></p>

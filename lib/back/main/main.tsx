@@ -1,0 +1,1 @@
+export { RqliteDialect } from "../rqliteDialect";
