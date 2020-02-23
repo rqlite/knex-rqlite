@@ -6,7 +6,7 @@
 <p>First install knex and knex-rqlite: <code>npm install knex rqlite-js @lufrai/knex-rqlite</code></p>
 <p>Then to use the driver like this:</p>
 <pre><code class="hljs language-js"><span class="hljs-keyword">import</span> Knex <span class="hljs-keyword">from</span> <span class="hljs-string">"knex"</span>;
-<span class="hljs-keyword">import</span> { RqliteDialect } <span class="hljs-keyword">from</span> <span class="hljs-string">"./rqliteDialect"</span>;
+<span class="hljs-keyword">import</span> { RqliteDialect } <span class="hljs-keyword">from</span> <span class="hljs-string">"@lufrai/knex-rqlite"</span>;
 
 <span class="hljs-keyword">const</span> knex = Knex({
   <span class="hljs-attr">client</span>: RqliteDialect,

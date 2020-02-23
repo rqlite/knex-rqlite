@@ -16,7 +16,7 @@ Then to use the driver like this:
 
 ```js
 import Knex from "knex";
-import { RqliteDialect } from "./rqliteDialect";
+import { RqliteDialect } from "@lufrai/knex-rqlite";
 
 const knex = Knex({
   client: RqliteDialect,
