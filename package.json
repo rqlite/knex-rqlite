@@ -2,7 +2,7 @@
   "name": "@lufrai/knex-rqlite",
   "version": "0.0.1",
   "description": "Rqlite dialect for knex",
-  "main": "index.js",
+  "main": "dist/back/main.js",
   "homepage": "https://github.com/lufrai/knex-rqlite",
   "types": "typings/package/main/main.d.ts",
   "author": {
