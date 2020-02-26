@@ -1,8 +1,8 @@
 
-# [@lufrai/knex-rqlite](https://github.com/lufrai/knex-rqlite)
+# [knex-rqlite](https://github.com/rqlite/knex-rqlite)
 
 
-<a href="https://opensource.org/licenses/MIT"><img src="https://raw.github.com/lufrai/knex-rqlite/master/static/readme/gen-badges/badge.0.svg?sanitize=true" alt="license"></a> <a href="https://www.npmjs.com/package/@lufrai/knex-rqlite"><img src="https://raw.github.com/lufrai/knex-rqlite/master/static/readme/gen-badges/badge.1.svg?sanitize=true" alt="npm"></a> <img src="https://raw.github.com/lufrai/knex-rqlite/master/static/readme/gen-badges/badge.2.svg?sanitize=true" alt="Tests"> <img src="https://raw.github.com/lufrai/knex-rqlite/master/static/readme/gen-badges/badge.3.svg?sanitize=true" alt="coverage"> <a href="https://prettier.io/"><img src="https://raw.github.com/lufrai/knex-rqlite/master/static/readme/gen-badges/badge.4.svg?sanitize=true" alt="code style"></a> <img src="https://raw.github.com/lufrai/knex-rqlite/master/static/readme/gen-badges/badge.5.svg?sanitize=true" alt="PRs"> 
+<a href="https://opensource.org/licenses/MIT"><img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.0.svg?sanitize=true" alt="license"></a> <a href="https://www.npmjs.com/package/knex-rqlite"><img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.1.svg?sanitize=true" alt="npm"></a> <img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.2.svg?sanitize=true" alt="Tests"> <img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.3.svg?sanitize=true" alt="coverage"> <a href="https://prettier.io/"><img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.4.svg?sanitize=true" alt="code style"></a> <img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.5.svg?sanitize=true" alt="PRs"> 
 
 Rqlite dialect for knex
 
@@ -10,13 +10,13 @@ Rqlite dialect for knex
 
 ## Usage
 
-First install knex and knex-rqlite: `npm install knex rqlite-js @lufrai/knex-rqlite`
+First install knex and knex-rqlite: `npm install knex rqlite-js knex-rqlite`
 
 Then to use the driver like this:
 
 ```js
 import Knex from "knex";
-import { RqliteDialect } from "@lufrai/knex-rqlite";
+import { RqliteDialect } from "knex-rqlite";
 
 const knex = Knex({
   client: RqliteDialect,

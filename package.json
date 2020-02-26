@@ -1,9 +1,9 @@
 {
-  "name": "@lufrai/knex-rqlite",
+  "name": "knex-rqlite",
   "version": "0.0.1",
   "description": "Rqlite dialect for knex",
   "main": "dist/back/main.js",
-  "homepage": "https://github.com/lufrai/knex-rqlite",
+  "homepage": "https://github.com/rqlite/knex-rqlite",
   "types": "typings/package/main/main.d.ts",
   "author": {
     "name": "Katja Lutz",
@@ -13,9 +13,6 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "patch-package"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -113,13 +110,13 @@
   },
   "common": {
     "licenseUrl": "https://opensource.org/licenses/MIT",
-    "repoStaticUrl": "https://raw.github.com/lufrai/knex-rqlite/${branch}/",
+    "repoStaticUrl": "https://raw.github.com/rqlite/knex-rqlite/${branch}/",
     "readmeSvgUrlSuffix": "?sanitize=true",
     "bannerCopyright": "Copyright(c) 2020 Katja Lutz"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lufrai/knex-rqlite.git"
+    "url": "https://github.com/rqlite/knex-rqlite.git"
   },
   "sideEffects": false,
   "dependencies": {
