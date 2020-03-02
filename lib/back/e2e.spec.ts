@@ -2,6 +2,7 @@ import { assert } from "chai";
 import Knex_ from "knex/types/index";
 import Knex from "knex";
 import { RqliteDialect } from "./rqliteDialect";
+import { typeConfig } from "./config";
 
 const TABLE_NAME = "rqliteDialect-e2e";
 
@@ -11,10 +12,10 @@ describe("rqliteDialect", function() {
   before(async function() {
     knex = Knex({
       client: RqliteDialect,
-      connection: {
+      connection: typeConfig({
         host: "localhost",
         port: 4001
-      }
+      })
     });
   });
 

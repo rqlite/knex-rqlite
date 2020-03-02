@@ -1,6 +1,7 @@
 import { Client } from "knex";
 import Knex, { Client as Client_ } from "knex/types/index";
 import { DataApiClient } from "rqlite-js";
+import { Config } from "./types";
 
 const QueryCompiler = __non_webpack_require__(
   "knex/lib/dialects/sqlite3/query/compiler"
@@ -38,18 +39,14 @@ export class RqliteDialect extends Client implements Client_ {
   dialect = "rqlite";
   driverName = "rqlite";
 
-  connectionSettings: {
-    host: string | undefined;
-    port: number | undefined;
-    ssl: boolean | undefined;
-  };
+  connectionSettings: Config;
 
   constructor(config) {
     super(config);
 
     this.driver = this._driver();
 
-    const connectionConfig = config.connection || {};
+    const connectionConfig: Partial<Config> = config.connection || {};
 
     this.connectionSettings = {
       host: "localhost",
