@@ -6,14 +6,14 @@
 <p>First install knex and knex-rqlite: <code>npm install knex rqlite-js knex-rqlite</code></p>
 <p>Then to use the driver like this:</p>
 <pre><code class="hljs language-js"><span class="hljs-keyword">import</span> Knex <span class="hljs-keyword">from</span> <span class="hljs-string">"knex"</span>;
-<span class="hljs-keyword">import</span> { RqliteDialect } <span class="hljs-keyword">from</span> <span class="hljs-string">"knex-rqlite"</span>;
+<span class="hljs-keyword">import</span> { RqliteDialect, typeConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">"knex-rqlite"</span>;
 
 <span class="hljs-keyword">const</span> knex = Knex({
   <span class="hljs-attr">client</span>: RqliteDialect,
-  <span class="hljs-attr">connection</span>: {
+  <span class="hljs-attr">connection</span>: typeConfig({
     <span class="hljs-attr">host</span>: <span class="hljs-string">"localhost"</span>,
     <span class="hljs-attr">port</span>: <span class="hljs-number">4001</span>
-  }
+  })
 });</code></pre>
 <h2 id="known-problems"><a href="#known-problems" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Known problems</h2>
 <ul>

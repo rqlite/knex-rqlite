@@ -1,6 +1,6 @@
 {
   "name": "knex-rqlite",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Rqlite dialect for knex",
   "main": "dist/back/main.js",
   "homepage": "https://github.com/rqlite/knex-rqlite",

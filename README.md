@@ -16,14 +16,14 @@ Then to use the driver like this:
 
 ```js
 import Knex from "knex";
-import { RqliteDialect } from "knex-rqlite";
+import { RqliteDialect, typeConfig } from "knex-rqlite";
 
 const knex = Knex({
   client: RqliteDialect,
-  connection: {
+  connection: typeConfig({
     host: "localhost",
     port: 4001
-  }
+  })
 });
 ``` 
 

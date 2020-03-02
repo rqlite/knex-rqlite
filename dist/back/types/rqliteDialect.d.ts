@@ -1,14 +1,11 @@
 import { Client } from "knex";
 import Knex, { Client as Client_ } from "knex/types/index";
 import { DataApiClient } from "rqlite-js";
+import { Config } from "./types";
 export declare class RqliteDialect extends Client implements Client_ {
     dialect: string;
     driverName: string;
-    connectionSettings: {
-        host: string | undefined;
-        port: number | undefined;
-        ssl: boolean | undefined;
-    };
+    connectionSettings: Config;
     constructor(config: any);
     destroyRawConnection(connection: any): Promise<void>;
     validateConnection(connection: any): Promise<boolean>;

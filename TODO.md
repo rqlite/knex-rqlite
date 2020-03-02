@@ -1,4 +1,3 @@
 - TODO: Transactions support
 - TODO: User & Password settings
 - TODO: Rqlite-js custom options like Consistency
-- TODO: Configuration type and function
