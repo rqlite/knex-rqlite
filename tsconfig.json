@@ -8,14 +8,8 @@
     "target": "ESNext",
     "module": "commonjs",
     "paths": {
-      "knex-rqlite": [
-        "../lib/main.ts"
-      ]
+      "knex-rqlite": ["../lib/main.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "site",
-    "**/dist"
-  ]
+  "exclude": ["node_modules", "site", "**/dist"]
 }

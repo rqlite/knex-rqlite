@@ -23,10 +23,10 @@ const knex = Knex({
   client: RqliteDialect,
   connection: typeConfig({
     host: "localhost",
-    port: 4001
-  })
+    port: 4001,
+  }),
 });
-``` 
+```
 
 ## Known problems
 

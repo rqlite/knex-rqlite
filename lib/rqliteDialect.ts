@@ -3,28 +3,16 @@ import Knex, { Client as Client_ } from "knex/types/index";
 import { DataApiClient } from "rqlite-js";
 import { Config } from "./types";
 
-const QueryCompiler = require(
-  "knex/lib/dialects/sqlite3/query/compiler"
-);
-const SchemaCompiler = require(
-  "knex/lib/dialects/sqlite3/schema/compiler"
-);
-const ColumnCompiler = require(
-  "knex/lib/dialects/sqlite3/schema/columncompiler"
-);
-const TableCompiler = require(
-  "knex/lib/dialects/sqlite3/schema/tablecompiler"
-);
-const SQLite3_DDL = require(
-  "knex/lib/dialects/sqlite3/schema/ddl"
-);
-const SQLite3_Formatter = require(
-  "knex/lib/dialects/sqlite3/formatter"
-);
+const QueryCompiler = require("knex/lib/dialects/sqlite3/query/compiler");
+const SchemaCompiler = require("knex/lib/dialects/sqlite3/schema/compiler");
+const ColumnCompiler = require("knex/lib/dialects/sqlite3/schema/columncompiler");
+const TableCompiler = require("knex/lib/dialects/sqlite3/schema/tablecompiler");
+const SQLite3_DDL = require("knex/lib/dialects/sqlite3/schema/ddl");
+const SQLite3_Formatter = require("knex/lib/dialects/sqlite3/formatter");
 
 const EXECUTE_METHODS = ["insert", "update", "counter", "del"];
 
-const getRqliteQueryResults = function(response) {
+const getRqliteQueryResults = function (response) {
   // Empty rqlite results are structured as [{}], we have to override this to []
   if (response.results.length === 1) {
     if (JSON.stringify(response.get(0).data) === "{}") {
@@ -52,7 +40,7 @@ export class RqliteDialect extends Client implements Client_ {
       host: "localhost",
       port: 4001,
       ssl: false,
-      ...connectionConfig
+      ...connectionConfig,
     };
   }
 
@@ -113,7 +101,7 @@ export class RqliteDialect extends Client implements Client_ {
     const defaults = {
       ...parentDefaults,
       min: 1,
-      max: 1
+      max: 1,
     };
 
     return defaults;
@@ -170,7 +158,7 @@ export class RqliteDialect extends Client implements Client_ {
 
     return {
       ...obj,
-      response
+      response,
     };
   }
 
@@ -184,7 +172,7 @@ export class RqliteDialect extends Client implements Client_ {
       case "pluck":
       case "first":
         const results = getRqliteQueryResults(response);
-        if (obj.method === "pluck") response = results.map(v => v[obj.pluck]);
+        if (obj.method === "pluck") response = results.map((v) => v[obj.pluck]);
         return obj.method === "first" ? results[0] : results;
       case "insert":
         return [obj.response.get(0).getLastInsertId()];

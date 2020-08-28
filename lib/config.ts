@@ -1,5 +1,5 @@
 import { Config } from "./types";
 
-export const typeConfig = function(config: Partial<Config>) {
+export const typeConfig = function (config: Partial<Config>) {
   return config;
 };
