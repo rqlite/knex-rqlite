@@ -1,12 +1,13 @@
-
 # [knex-rqlite](https://github.com/rqlite/knex-rqlite)
 
-
-<a href="https://opensource.org/licenses/MIT"><img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.0.svg?sanitize=true" alt="license"></a> <a href="https://www.npmjs.com/package/knex-rqlite"><img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.1.svg?sanitize=true" alt="npm"></a> <img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.2.svg?sanitize=true" alt="Tests"> <img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.3.svg?sanitize=true" alt="coverage"> <a href="https://prettier.io/"><img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.4.svg?sanitize=true" alt="code style"></a> <img src="https://raw.github.com/rqlite/knex-rqlite/master/static/readme/gen-badges/badge.5.svg?sanitize=true" alt="PRs"> 
+[![](assets/badge.license.svg)](https://opensource.org/licenses/MIT)
+[![](assets/badge.npm.svg)](https://www.npmjs.com/package/knex-rqlite)
+![](assets/badge.coverage.svg)
+[![](assets/badge.style.svg)](https://prettier.io/)
 
 Rqlite dialect for knex
 
--------
+---
 
 ## Usage
 

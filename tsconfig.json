@@ -1,36 +1,21 @@
 {
-    "compilerOptions": {
-        "jsx": "react",
-        "noEmit": true,
-        "lib": [
-            "dom",
-            "es6",
-            "es2017",
-            "scripthost"
-        ],
-        "target": "es5",
-        "allowJs": true,
-        "isolatedModules": false,
-        "allowSyntheticDefaultImports": true,
-        "downlevelIteration": true,
-        "esModuleInterop": true,
-        "baseUrl": "./lib",
-        "strict": false,
-        "strictNullChecks": true,
-        "paths": {
-            "@lib/*": [
-                "*"
-            ],
-            "@project/*": [
-                "../*"
-            ]
-        }
-    },
-    "include": [
-        "**/*"
-    ],
-    "exclude": [
-        "./tmp",
-        "./typings"
-    ]
+  "compilerOptions": {
+    "jsx": "react",
+    "noEmit": true,
+    "allowJs": true,
+    "baseUrl": "./node_modules",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "commonjs",
+    "paths": {
+      "knex-rqlite": [
+        "../lib/main.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "site",
+    "**/dist"
+  ]
 }

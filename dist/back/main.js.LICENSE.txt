@@ -1,6 +1,0 @@
-/*!
- * knex-rqlite
- * Copyright(c) 2020 Katja Lutz
- * MIT Licensed
- * https://opensource.org/licenses/MIT
-*/
