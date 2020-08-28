@@ -37,18 +37,18 @@
     "chai": "^4.2.0",
     "fs-extra": "^9.0.1",
     "jest": "^26.4.2",
-    "knex": "^0.20.10",
+    "knex": "^0.21.5",
     "mallery": "1.0.0-alpha.7",
     "microbundle": "^0.12.3",
     "prettier": "^2.1.1",
-    "rqlite-js": "^1.1.0",
+    "rqlite-js": "^2.0.0",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
-    "knex": ">= 0.20.10 < 1",
-    "rqlite-js": ">= 1.0.0 < 2"
+    "knex": ">= 0.21.5 < 1",
+    "rqlite-js": ">= 2.0.0 < 3"
   },
   "files": [
     "lib",
@@ -75,6 +75,7 @@
     ],
     "collectCoverageFrom": [
       "lib/**/*.{ts,tsx,js,jsx}"
-    ]
+    ],
+    "testEnvironment": "node"
   }
 }
