@@ -37,7 +37,7 @@
     "chai": "^4.2.0",
     "fs-extra": "^9.0.1",
     "jest": "^26.4.2",
-    "knex": "^0.21.5",
+    "knex": "^2.1.0",
     "mallery": "1.0.0-alpha.7",
     "microbundle": "^0.12.3",
     "prettier": "^2.1.1",
@@ -47,7 +47,7 @@
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
-    "knex": ">= 0.21.5 < 1",
+    "knex": "^2.1.0",
     "rqlite-js": ">= 2.0.0 < 3"
   },
   "files": [
