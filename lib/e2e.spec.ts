@@ -29,7 +29,7 @@ describe("rqliteDialect", function () {
   });
 
   describe("createTable", function () {
-    it("should create a new tablet", async function () {
+    it("should create a new table", async function () {
       await knex.schema.createTable(TABLE_NAME, function (table) {
         table.increments("id");
         table.string("name");
