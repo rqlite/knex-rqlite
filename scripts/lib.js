@@ -2,6 +2,7 @@ const { spawnSync } = require("child_process");
 const path = require("path");
 const fs = require("fs-extra");
 const pkg = require("../package.json");
+const { rm } = require("fs/promises");
 
 exports.upperFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 exports.exists = fs.exists;
@@ -13,7 +14,7 @@ exports.mkDir = fs.mkdir;
 exports.writeFile = fs.writeFile;
 exports.readFile = fs.readFile;
 exports.writeJson = fs.writeJson;
-exports.rmDir = fs.rmdir;
+exports.rmDir = rm;
 exports.copy = fs.copy;
 exports.chmod = fs.chmod;
 exports.pkgDir = (...suffix) => exports.resolve(__dirname, "..", ...suffix);
