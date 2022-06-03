@@ -76,4 +76,14 @@ describe("rqliteDialect", function () {
       ]);
     });
   });
+
+  describe("alterTable", function () {
+    it("should add a field to the table", async function () {
+      await knex.schema.alterTable(TABLE_NAME, function (table) {
+        table.integer("age").notNullable().defaultTo(0);
+      });
+
+      assert.equal(await knex.schema.hasColumn(TABLE_NAME, "age"), true);
+    });
+  });
 });
