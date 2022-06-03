@@ -1,16 +1,15 @@
 import { assert } from "chai";
-import Knex_ from "knex/types/index";
-import Knex from "knex";
+import { knex as createKnexInstance, Knex } from "knex";
 import { RqliteDialect } from "./rqliteDialect";
 import { typeConfig } from "./config";
 
 const TABLE_NAME = "rqliteDialect-e2e";
 
 describe("rqliteDialect", function () {
-  let knex: Knex_;
+  let knex: Knex;
 
   beforeAll(async function () {
-    knex = Knex({
+    knex = createKnexInstance({
       client: RqliteDialect,
       connection: typeConfig({
         host: "localhost",
