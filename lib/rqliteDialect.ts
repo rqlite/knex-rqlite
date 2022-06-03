@@ -135,7 +135,7 @@ export class RqliteDialect extends Client implements Client_ {
       useExecute = EXECUTE_METHODS.indexOf(obj.method) > -1;
     }
 
-    if (sql.indexOf("drop table ") === 0) {
+    if (/^(drop|create|alter) table\s+/.test(sql)) {
       useExecute = true;
     }
 
