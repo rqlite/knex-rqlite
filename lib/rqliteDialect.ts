@@ -2,12 +2,16 @@ import { knex, Knex } from "knex";
 import { DataApiClient } from "rqlite-js";
 import { Config } from "./types";
 
+const Client_SQLite3 = require("knex/lib/dialects/sqlite3");
 const QueryCompiler = require("knex/lib/dialects/sqlite3/query/sqlite-querycompiler");
 const SchemaCompiler = require("knex/lib/dialects/sqlite3/schema/sqlite-compiler");
 const ColumnCompiler = require("knex/lib/dialects/sqlite3/schema/sqlite-columncompiler");
 const TableCompiler = require("knex/lib/dialects/sqlite3/schema/sqlite-tablecompiler");
 const SQLite3_DDL = require("knex/lib/dialects/sqlite3/schema/ddl");
 const Formatter = require("knex/lib/formatter");
+const {
+  formatQuery,
+} = require("knex/lib/execution/internal/query-executioner");
 
 const EXECUTE_METHODS = ["insert", "update", "counter", "del"];
 
@@ -22,7 +26,7 @@ const getRqliteQueryResults = function (response) {
   return response.toArray();
 };
 
-export class RqliteDialect extends knex.Client {
+class RqliteDialect extends knex.Client {
   dialect = "rqlite";
   driverName = "rqlite";
   driver = null;
@@ -105,10 +109,6 @@ export class RqliteDialect extends knex.Client {
     return defaults;
   }
 
-  wrapIdentifierImpl(value) {
-    return value !== "*" ? `\`${value.replace(/`/g, "``")}\`` : "*";
-  }
-
   connection: DataApiClient;
 
   async acquireConnection() {
@@ -130,24 +130,8 @@ export class RqliteDialect extends knex.Client {
     return connection;
   }
 
-  _formatQuery(sql, bindings, timeZone) {
-    // ported from https://github.com/knex/knex/blob/823c7b60f74fb16bcb8a8230afe1fea6673c2bd0/lib/client.js#L135
-    bindings = bindings == null ? [] : [].concat(bindings);
-    let index = 0;
-    return sql.replace(/\\?\?/g, (match) => {
-      if (match === "\\?") {
-        return "?";
-      }
-      if (index === bindings.length) {
-        return match;
-      }
-      const value = bindings[index++];
-      return super._escapeBinding(value, { timeZone });
-    });
-  }
-
   async _query(connection, obj) {
-    let sql = (this as any)._formatQuery(obj.sql, obj.bindings);
+    let sql = formatQuery(obj.sql, obj.bindings, undefined, this);
 
     let useExecute = false;
     if (obj.method) {
@@ -208,3 +192,9 @@ export class RqliteDialect extends knex.Client {
     return DataApiClient;
   }
 }
+
+Object.assign(RqliteDialect.prototype, {
+  wrapIdentifierImpl: Client_SQLite3.prototype.wrapIdentifierImpl,
+});
+
+export { RqliteDialect };
