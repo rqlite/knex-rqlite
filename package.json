@@ -47,7 +47,7 @@
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
-    "knex": ">= 0.95.0 < 3",
+    "knex": ">= 2.0.0 < 3",
     "rqlite-js": ">= 2.0.0 < 3"
   },
   "files": [
