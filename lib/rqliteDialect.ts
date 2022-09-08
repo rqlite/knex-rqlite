@@ -31,7 +31,7 @@ class RqliteDialect extends knex.Client {
   driverName = "rqlite";
   driver = null;
 
-  connectionSettings: Config;
+  declare connectionSettings: Config;
 
   constructor(config) {
     super(config);
@@ -80,7 +80,7 @@ class RqliteDialect extends knex.Client {
     return new SQLite3_DDL(this, compiler, pragma, connection);
   }
 
-  transaction(container: any, config: any, outerTx: any) {
+  transaction(container: any, config: any, outerTx: any): Knex.Transaction {
     throw new Error("Method not implemented.");
   }
 
