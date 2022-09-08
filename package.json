@@ -39,7 +39,7 @@
     "jest": "^26.4.2",
     "knex": "^2.1.0",
     "mallery": "1.0.0-alpha.7",
-    "microbundle": "^0.12.3",
+    "microbundle": "^0.15.1",
     "prettier": "^2.1.1",
     "rqlite-js": "^2.0.0",
     "standard-version": "^9.0.0",
