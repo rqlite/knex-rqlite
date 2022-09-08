@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/rqlite/knex-rqlite/compare/v1.0.1...v2.0.0) (2022-09-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade knex peer dependency to 2.0
+
+### Features
+
+* upgrade knex peer dependency to 2.0 ([31dfc24](https://github.com/rqlite/knex-rqlite/commit/31dfc24681165d3d309dbe3ddccee53d913577ce)), closes [#17](https://github.com/rqlite/knex-rqlite/issues/17)
+
 ### [1.0.1](https://github.com/rqlite/knex-rqlite/compare/v1.0.0...v1.0.1) (2022-06-03)
 
 ## [1.0.0](https://github.com/rqlite/knex-rqlite/compare/v0.1.0...v1.0.0) (2020-08-28)
