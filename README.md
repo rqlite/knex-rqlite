@@ -28,6 +28,10 @@ const knex = Knex({
 });
 ```
 
+## Credits
+
+A special thanks goes to the team [@redaxle](https://github.com/redaxle), which implemented the compatibility between knex-rqlite and knex 2.0 ([#17](https://github.com/rqlite/knex-rqlite/pull/17))!
+
 ## Known problems
 
 - This knex dialect **doesn't support transactions** yet
