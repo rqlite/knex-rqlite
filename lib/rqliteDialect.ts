@@ -13,8 +13,6 @@ const {
   formatQuery,
 } = require("knex/lib/execution/internal/query-executioner");
 
-const EXECUTE_METHODS = ["insert", "update", "counter", "del"];
-
 const getRqliteQueryResults = function (response) {
   // Empty rqlite results are structured as [{}], we have to override this to []
   if (response.results.length === 1) {
@@ -133,13 +131,10 @@ class RqliteDialect extends knex.Client {
   async _query(connection, obj) {
     let sql = formatQuery(obj.sql, obj.bindings, undefined, this);
 
-    let useExecute = false;
-    if (obj.method) {
-      useExecute = EXECUTE_METHODS.indexOf(obj.method) > -1;
-    }
+    let useExecute = true;
 
-    if (/^(drop|create|alter) table\s+/.test(sql)) {
-      useExecute = true;
+    if (/^(select|pragma)\s+/i.test(sql)) {
+      useExecute = false;
     }
 
     let response;
