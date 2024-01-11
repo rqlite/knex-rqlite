@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/rqlite/knex-rqlite/compare/v2.0.3...v3.0.0) (2024-01-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump dependencies
+
+### Features
+
+* bump dependencies ([00f5007](https://github.com/rqlite/knex-rqlite/commit/00f50076e82148c8910787da5ea86c970f45b8af))
+
 ### [2.0.3](https://github.com/rqlite/knex-rqlite/compare/v2.0.2...v2.0.3) (2022-11-27)
 
 ### [2.0.2](https://github.com/rqlite/knex-rqlite/compare/v2.0.1...v2.0.2) (2022-09-08)
