@@ -56,7 +56,7 @@
   ],
   "standard-version": {
     "scripts": {
-      "postchangelog": "node scripts/badges.js && git add assets site README.md"
+      "postchangelog": "node scripts/badges.js && git add assets README.md"
     }
   },
   "jest": {
