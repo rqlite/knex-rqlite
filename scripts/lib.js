@@ -24,7 +24,7 @@ exports.args = process.argv.slice(2);
 exports.spawn = (
   command,
   args,
-  options = { stdio: "inherit", encoding: "utf8" }
+  options = { stdio: "inherit", encoding: "utf8" },
 ) => {
   return spawnSync(command, args, options);
 };
@@ -32,7 +32,7 @@ exports.spawnScript = (script, args = [], options) => {
   return exports.spawn(
     "node",
     [exports.scriptsDir(`${script}.js`), ...args],
-    options
+    options,
   );
 };
 exports.spawnScripts = async (prefix, args = [], options) => {

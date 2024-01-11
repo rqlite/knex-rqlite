@@ -20,7 +20,7 @@ const fs = require("fs");
 const nodeModulesDir = pkgDir("node_modules");
 const unfilteredModuleDirs = fs.readdirSync(nodeModulesDir);
 const moduleBindings = unfilteredModuleDirs.map((moduleDir) =>
-  path.resolve(nodeModulesDir, moduleDir, "binding.gyp")
+  path.resolve(nodeModulesDir, moduleDir, "binding.gyp"),
 );
 const existingBindings = moduleBindings.filter((file) => fs.existsSync(file));
 const modules = existingBindings.map((file) => {

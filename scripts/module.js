@@ -17,13 +17,13 @@ const updatePkg = async function (moduleName, pkg) {
   pkg.files.push(
     `${moduleName}/package.json`,
     `${moduleName}/lib`,
-    `${moduleName}/dist`
+    `${moduleName}/dist`,
   );
   pkg.files = Array.from(new Set(pkg.files));
 
   pkg.jest.collectCoverageFrom.push(`${moduleName}/lib/**/*.{ts,tsx,js,jsx}`);
   pkg.jest.collectCoverageFrom = Array.from(
-    new Set(pkg.jest.collectCoverageFrom)
+    new Set(pkg.jest.collectCoverageFrom),
   );
 
   const exportsBase = `./${moduleName}`;
@@ -81,7 +81,7 @@ const createModulePkg = async function (moduleDir, moduleName, pkg) {
     },
     {
       spaces: "  ",
-    }
+    },
   );
 };
 
@@ -90,7 +90,7 @@ const createModuleLib = async function (moduleDir) {
   await mkDir(moduleLibDir);
   await writeFile(
     resolve(moduleLibDir, "main.ts"),
-    'export const hello = "world";' + "\n"
+    'export const hello = "world";' + "\n",
   );
 };
 

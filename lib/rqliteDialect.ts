@@ -150,7 +150,7 @@ class RqliteDialect extends knex.Client {
 
     if (response.hasError()) {
       throw new Error(
-        `Query resulted in an error: '${response.getFirstError().message}'`
+        `Query resulted in an error: '${response.getFirstError().message}'`,
       );
     }
 

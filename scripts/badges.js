@@ -11,7 +11,7 @@ fs.writeFileSync(
   badgen({
     label: "code style",
     status: "prettier",
-  })
+  }),
 );
 
 fs.writeFileSync(
@@ -19,7 +19,7 @@ fs.writeFileSync(
   badgen({
     label: "license",
     status: pkg.license,
-  })
+  }),
 );
 
 fs.writeFileSync(
@@ -27,7 +27,7 @@ fs.writeFileSync(
   badgen({
     label: "npm",
     status: pkg.version,
-  })
+  }),
 );
 
 const getCoveragePct = function () {
@@ -51,5 +51,5 @@ fs.writeFileSync(
   badgen({
     label: "coverage",
     status: Math.round(getCoveragePct()) + "%",
-  })
+  }),
 );
