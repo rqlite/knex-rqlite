@@ -7,6 +7,7 @@ const QueryCompiler = require("knex/lib/dialects/sqlite3/query/sqlite-querycompi
 const SchemaCompiler = require("knex/lib/dialects/sqlite3/schema/sqlite-compiler");
 const ColumnCompiler = require("knex/lib/dialects/sqlite3/schema/sqlite-columncompiler");
 const TableCompiler = require("knex/lib/dialects/sqlite3/schema/sqlite-tablecompiler");
+const Transaction = require("knex/lib/dialects/sqlite3/execution/sqlite-transaction");
 const SQLite3_DDL = require("knex/lib/dialects/sqlite3/schema/ddl");
 const Formatter = require("knex/lib/formatter");
 const {
@@ -79,7 +80,7 @@ class RqliteDialect extends knex.Client {
   }
 
   transaction(container: any, config: any, outerTx: any): Knex.Transaction {
-    throw new Error("Method not implemented.");
+    return new Transaction(this, container, config, outerTx);
   }
 
   stream(connection: any, obj: any, stream: any, options: any) {
